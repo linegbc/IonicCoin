@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Histórico de Conversões</ion-title>
+    
+    <ion-buttons slot="end" *ngIf="historyList.length > 0">
+      <ion-button (click)="clearAll()">
+        <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  
+  <div class="ion-text-center ion-padding" *ngIf="historyList.length === 0">
+    <ion-icon name="hourglass-outline" style="font-size: 64px; color: var(--ion-color-medium);"></ion-icon>
+    <p color="medium">Nenhuma conversão recente encontrada no dispositivo.</p>
+  </div>
+
+  <ion-list *ngIf="historyList.length > 0">
+    <ion-item-sliding *ngFor="let item of historyList">
+      <ion-item>
+        <ion-label>
+          <h2><strong>{{ item.amount }} {{ item.from }}</strong> → <span color="success"><strong>{{ item.result | number:'1.2-2' }} {{ item.to }}</strong></span></h2>
+          <p>{{ item.date }}</p>
+        </ion-label>
+        <ion-badge color="secondary" slot="end">{{ item.from }}</ion-badge>
+      </ion-item>
+    </ion-item-sliding>
+  </ion-list>
+
+</ion-content>

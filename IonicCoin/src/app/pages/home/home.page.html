@@ -1,0 +1,70 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>IonicCoin</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="goToHistory()">
+        <ion-icon slot="icon-only" name="time-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="container">
+    <h2 class="ion-text-center">Conversor de Moedas</h2>
+    <p class="ion-text-center" color="medium">Taxas de câmbio em tempo real</p>
+
+    <ion-item fill="outline" class="ion-margin-bottom">
+      <ion-label position="floating">Valor a ser convertido</ion-label>
+      <ion-input type="number" [(ngModel)]="amount" (ionInput)="convert()"></ion-input>
+    </ion-item>
+
+    <ion-grid>
+      <ion-row class="ion-align-items-center">
+        <ion-col size="5">
+          <ion-item fill="outline">
+            <ion-label position="floating">Origem</ion-label>
+            <ion-select [(ngModel)]="fromCurrency" (ionChange)="loadRates()">
+              <ion-select-option *ngFor="let currency of currencies" [value]="currency">
+                {{ currency }}
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+
+        <ion-col size="2" class="ion-text-center">
+          <ion-button fill="clear" (click)="reverseCurrencies()">
+            <ion-icon name="swap-horizontal-outline" slot="icon-only"></ion-icon>
+          </ion-button>
+        </ion-col>
+
+        <ion-col size="5">
+          <ion-item fill="outline">
+            <ion-label position="floating">Destino</ion-label>
+            <ion-select [(ngModel)]="toCurrency" (ionChange)="convert()">
+              <ion-select-option *ngFor="let currency of currencies" [value]="currency">
+                {{ currency }}
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-button expand="block" class="ion-margin-top" (click)="onConvertClick()">
+      Converter e Salvar
+    </ion-button>
+
+    <ion-card class="ion-margin-top ion-text-center" color="light" *ngIf="result > 0">
+      <ion-card-content>
+        <h3>Resultado da Conversão:</h3>
+        <h1>{{ amount }} {{ fromCurrency }} =</h1>
+        <h1 color="success"><strong>{{ result | number:'1.2-2' }} {{ toCurrency }}</strong></h1>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-note color="danger" class="ion-text-center" *ngIf="errorMessage">
+      {{ errorMessage }}
+    </ion-note>
+  </div>
+</ion-content>
