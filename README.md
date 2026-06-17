@@ -53,4 +53,16 @@ Para rodar este projeto em seu ambiente de desenvolvimento local, siga os passos
 
 1. **Clone este repositório público:**
    ```bash
-   git clone [https://github.com/linegbc/IonicCoin.git](https://github.com/linegbc/IonicCoin.git)
+   git clone https://github.com/linegbc/IonicCoin.git
+
+2. **Navegue até a pasta do projeto:**
+   ```bash
+   cd IonicCoin
+
+3. **Inicie o servidor de desenvolvimento local do Ionic:**
+   ```bash
+   npm install
+
+4. **Inicie o servidor de desenvolvimento local do Ionic:**
+   ```bash
+   ionic serve
