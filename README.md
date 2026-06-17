@@ -1,4 +1,4 @@
-# IonicCoin 🪙
+# IonicCoin
 
 **IonicCoin** é um aplicativo móvel responsivo de conversão de moedas em tempo real desenvolvido com o framework **Ionic** e **Angular**, utilizando a linguagem **TypeScript**. O projeto foi construído seguindo a arquitetura moderna de **Standalone Components** do Angular, garantindo um código limpo, modular e de fácil manutenção.
 
@@ -6,7 +6,7 @@ O objetivo principal da aplicação é permitir que os usuários consultem taxas
 
 ---
 
-## 🚀 Funcionalidades Principais
+## Funcionalidades Principais
 
 * **Integração com API REST**: Consumo de dados em tempo real da *ExchangeRate-API* para obter taxas de câmbio de uma ampla variedade de moedas internacionais (como USD, EUR, BRL).
 * **Interface Responsiva**: Design limpo e intuitivo que se adapta automaticamente a diferentes tamanhos de tela (computadores, tablets e celulares) utilizando componentes nativos do Ionic.
@@ -17,7 +17,7 @@ O objetivo principal da aplicação é permitir que os usuários consultem taxas
 
 ---
 
-## 📸 Demonstração do Aplicativo
+## Demonstração do Aplicativo
 
 > **Nota para Avaliação:** Abaixo estão as capturas de tela das principais interfaces do sistema, conforme exigido pelos critérios de documentação do projeto.
 
@@ -36,7 +36,7 @@ O objetivo principal da aplicação é permitir que os usuários consultem taxas
 
 ---
 
-## 🛠️ Especificações Técnicas
+## Especificações Técnicas
 
 * **Framework Base**: Ionic Framework (v7+) com Angular (v18+)
 * **Arquitetura**: Standalone Components (Componentes Independentes)
@@ -47,11 +47,10 @@ O objetivo principal da aplicação é permitir que os usuários consultem taxas
 
 ---
 
-## 📦 Como Executar o Projeto Localmente
+## Como Executar o Projeto Localmente
 
 Para rodar este projeto em seu ambiente de desenvolvimento local, siga os passos abaixo:
 
 1. **Clone este repositório público:**
    ```bash
    git clone [https://github.com/linegbc/IonicCoin.git](https://github.com/linegbc/IonicCoin.git)
-   
